@@ -4,7 +4,7 @@ import numpy as np
 from ultralytics import YOLO  # Make sure this import works in your Hugging Face environment
 
 # Load the model
-@st.cache_resource(allow_output_mutation=True)
+@st.cache_resource
 def load_model():
     model = YOLO("weights.pt")  # Adjust path if needed
     return model
