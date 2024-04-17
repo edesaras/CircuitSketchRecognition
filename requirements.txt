@@ -1,0 +1,4 @@
+ultralytics
+stremlit
+Pillow
+numpy
