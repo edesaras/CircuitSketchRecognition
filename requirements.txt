@@ -1,4 +1,4 @@
 ultralytics
-stremlit
+streamlit
 Pillow
 numpy
