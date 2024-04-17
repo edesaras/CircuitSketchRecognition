@@ -4,7 +4,7 @@ import numpy as np
 from ultralytics import YOLO  # Make sure this import works in your Hugging Face environment
 
 # Load the model
-@st.cache(allow_output_mutation=True)
+@st.cache_resource(allow_output_mutation=True)
 def load_model():
     model = YOLO("weights.pt")  # Adjust path if needed
     return model
@@ -25,7 +25,7 @@ if uploaded_file is not None:
     # Perform inference
     results = model.predict(uploaded_file)
     r = results[0]
-    im_bgr = r.plot(conf=False, pil=True, font_size=32, line_width=2)  # Returns a PIL image if pil=True
+    im_bgr = r.plot(conf=False, pil=True, font_size=48, line_width=3)  # Returns a PIL image if pil=True
     im_rgb = Image.fromarray(im_bgr[..., ::-1])  # Convert BGR to RGB
 
     # Display the prediction
@@ -33,4 +33,5 @@ if uploaded_file is not None:
 
 # Optionally, display pre-computed example images
 if st.checkbox('Show Example Results'):
-    st.image(['example1.jpg', 'example2.jpg'], width=300, caption=['Example 1', 'Example 2'])
+    st.image('example1.jpg', use_column_width=True, caption='Example 1')
+    st.image('example2.jpg', use_column_width=True, caption='Example 2')
