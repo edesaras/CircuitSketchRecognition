@@ -23,7 +23,7 @@ if uploaded_file is not None:
     st.write("Detecting...")
 
     # Perform inference
-    results = model.predict(uploaded_file)
+    results = model.predict(image)
     r = results[0]
     im_bgr = r.plot(conf=False, pil=True, font_size=48, line_width=3)  # Returns a PIL image if pil=True
     im_rgb = Image.fromarray(im_bgr[..., ::-1])  # Convert BGR to RGB
