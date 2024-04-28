@@ -73,8 +73,8 @@ def file_uploader_cb(model, ocr_model, ocr_processor, uploaded_file, font_size, 
     st.subheader('Transcription')
     crops, text_bboxes = extract_text_patches(result, image)
     texts = ocr_predict(ocr_model, ocr_processor, crops)
-    transcription_df = pd.DataFrame(zip(texts, *np.array(text_bboxes).T, [st.image(crop) for crop in crops]),  
-             columns=['Transcription', 'xmin', 'ymin', 'xmax', 'ymax', 'Image'])
+    transcription_df = pd.DataFrame(zip(texts, *np.array(text_bboxes).T),  
+             columns=['Transcription', 'xmin', 'ymin', 'xmax', 'ymax'])
     st.dataframe(transcription_df)
 
 def image_capture_cb(model, ocr_model, ocr_processor, capture, font_size, line_width, col):
