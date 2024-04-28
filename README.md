@@ -5,7 +5,7 @@ colorFrom: blue
 colorTo: blue
 sdk: streamlit
 sdk_version: 1.33.0
-app_file: Hello.py
+app_file: 🤗_Hello.py
 pinned: false
 license: mit
 ---
