@@ -2,3 +2,5 @@ ultralytics
 streamlit
 Pillow
 numpy
+transformers
+pandas
