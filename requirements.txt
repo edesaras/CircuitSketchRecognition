@@ -4,3 +4,4 @@ Pillow
 numpy
 transformers
 pandas
+opencv-python-headless
